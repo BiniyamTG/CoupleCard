@@ -1,45 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+/* styles.css */
+:root{
+  --bg: #f0f0f0;
+  --card-bg: #ffffff;
+  --accent: #ff0026;
+  --accent-dark: #b30000;
 }
 
-.container {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:#222;
 }
 
-img {
-    max-width: 100%;
-    height: 50vh;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 5px;
-    background: #fff;
-    justify-content: center;
-    display: flex;
+.container{
+  width:min(880px,94%);
+  margin:48px auto;
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 22px rgba(0,0,0,0.08);
+  text-align:center;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #ff0026;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    
+h1{
+  margin:0 0 16px 0;
+  font-size:1.6rem;
+  letter-spacing:0.3px;
 }
 
-button:hover {
-    background-color: #b30000;
+.image-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #e6e6e6;
+  margin-bottom:18px;
+  min-height:220px;
+}
+
+/* Make the image responsive and preserve aspect ratio */
+.image-wrap img{
+  max-width:100%;
+  max-height:60vh;
+  object-fit:contain; /* preserve aspect ratio and show whole image */
+  border-radius:8px;
+  display:block;
+}
+
+/* Controls */
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+
+button{
+  padding:10px 14px;
+  font-size:15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+
+button:hover{ background:var(--accent-dark) }
+
+button[title]{
+  width:44px;
+  padding:8px;
+  font-weight:600;
+}
+
+/* status text */
+.status{
+  margin:6px 0 0;
+  font-size:0.95rem;
+  color:#666;
+  min-height:20px;
+}
+
+/* small hint footer */
+.hint{
+  margin-top:12px;
+  font-size:0.85rem;
+  color:#777;
 }
