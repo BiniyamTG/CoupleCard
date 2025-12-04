@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>እንጠያየቅ cards</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,10 +10,24 @@
   <div class="container">
     <h1>እንጠያየቅ cards</h1>
 
-    <img id="questionImage" src="" alt="Question card image" />
-    <button id="randomButton">RANDOM QUESTION</button>
-    <p id="status" style="font-size:0.9rem;color:#666;margin-top:8px;"></p>
+    <!-- The image element. src is set by script.js -->
+    <div class="image-wrap">
+      <img id="questionImage" src="" alt="Question card image" />
+    </div>
+
+    <div class="controls">
+      <button id="randomButton" type="button">RANDOM QUESTION</button>
+      <button id="prevButton" type="button" title="Previous">◀</button>
+      <button id="nextButton" type="button" title="Next">▶</button>
+    </div>
+
+    <p id="status" class="status" aria-live="polite"></p>
+
+    <footer class="hint">
+      Tip: if images fail to load, check file names (no uppercase/lowercase mismatch). Use safe names like <code>6-1.jpg</code>.
+    </footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
